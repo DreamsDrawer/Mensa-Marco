@@ -1,0 +1,12 @@
+<div class = 'panel panel-primary'>
+  <div class = 'panel-body' *ngIf='dish'>
+
+    <img [src]='dish.imageUrl' [style.width.px]='500'/>
+    <p>{{dish.name}}
+     <!-- <p>{{dish?.name}}   .... con il ? NON da errore se non trova le proprietà!  -->
+    <app-diet [dietName]= 'dish.diet'></app-diet>
+  </div>
+  <div class ='panel-footer'>
+    <a class ='btn btn-default' (click)='onBack()'>BACK</a>
+  </div>
+</div>

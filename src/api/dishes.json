@@ -1,0 +1,38 @@
+[
+{
+    "course" : "Primo",
+    "name" : "Carbonara",
+    "price" : 5.20,
+    "imageUrl" : "http://cdn.cook.stbm.it/thumbnails/ricette/116/116035/hd750x421.jpg",
+    "counter" : 0,
+    "diet" : "pork",
+    "id" : 0
+  },
+  {
+    "course" : "Secondo",
+    "name" : "Squalo Fritto",
+    "price" : 8.65432,
+    "imageUrl": "https://media-cdn.tripadvisor.com/media/photo-s/10/76/66/86/spigola-ai-ferri.jpg",
+    "counter" : 0,
+    "diet" : "fish",
+    "id" : 1
+  },
+  {
+    "course" : "etnico",
+    "name" : "Mantide al salmi",
+    "price" : 123.5,
+    "imageUrl" : "https://img0.etsystatic.com/211/1/8022967/il_340x270.1237165900_n5ul.jpg",
+    "counter" : 0,
+    "diet" : "insect",
+    "id" : 2
+  },
+  {
+    "course" : "dolce",
+    "name" : "profitterol juventino",
+    "price" : 1,
+    "imageUrl" : "https://gsanseve.files.wordpress.com/2012/12/c763d-profitterol.jpg?w=400&h=327",
+    "counter" : 0,
+    "diet" : "vegetarian",
+    "id" : 3
+  }
+]

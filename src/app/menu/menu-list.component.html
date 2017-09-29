@@ -1,0 +1,48 @@
+<h1> --- MENU INPESE ---</h1>
+
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{panelHeading}}
+    </div>
+    {{dietMessage}}
+    {{errorMessage}}
+    <div class='panel-body' *ngIf='dishes && dishes.length'>
+        <div class='table-responsive'>
+            <table class='table'>
+                <thead>
+                    <th></th> 
+                    <th>PORTATA</th>
+                    <th>NOME</th>
+                    <th>TIPO</th>
+                    <th>PREZZO</th>
+                    <th>QUANTITA'</th>                   
+                </thead>
+                <tbody>
+                    <tr *ngFor='let dish of dishes'>              <!-- Questo e' un DATA BINDING ([src] =..) -->
+                        <td><img [src] = 'dish.imageUrl'          
+                             alt='IMAGE'
+                             [style.width.px]='imageWidth' 
+                             [style.border]='15'/>
+                        </td>                                      <!-- Questo e' un PROPERTY BINDING -->
+                        <td>{{dish.course | uppercase }}</td>
+                        <td><a [routerLink]='["/menu", dish.id]'>{{dish.name}}</a></td>                     <!-- Questo e' un INTERPOLATION -->
+                        <td><app-diet [dietName]='dish.diet'
+                             (notifyDiet)='onNotifyDiet($event)'
+                            >
+                            </app-diet>
+                            
+                        </td>  <!-- assegnazione NESTED COMPONENT -->
+                        <td>{{dish.price | currency : 'EUR' : true : '1.2-3'}}</td>
+                         <!-- Questo che segue e' un EVENT BINDING -->
+                        <td><button class='btn btn-primary' (click)='decCounter(dish)'> - </button></td>
+                        <input [(ngModel)]='dish.counter' />       <!-- Questo e' un TWO WAY BINDING -->
+                        <td><button class='btn btn-primary' (click)='incCounter(dish)'> + </button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Hai speso {{totPrice | currency :'EUR':true}}</p>
+            <td><button class='btn btn-default' (click)='reset()'> reset </button></td>
+            <td><button class='btn btn-primary' (click)='doOrder()'> ORDINA </button></td>
+        </div>
+    </div>
+</div>
